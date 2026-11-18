@@ -1,5 +1,14 @@
 [
   {
+    "name": "config_canaima_ligero.xml",
+    "filename": "config_canaima_ligero.xml",
+    "size_mb": 0.0,
+    "date": "2026-11-18 09:46",
+    "description": "Configuracion XML de Office Ligero corregida para Canaima",
+    "download_url": "files/config_canaima_ligero.xml",
+    "raw_url": "https://github.com/luiscrock16/archivos/raw/main/files/config_canaima_ligero.xml"
+  },
+  {
     "name": "1_INSTALAR_OFFICE_LIGERO.bat",
     "filename": "1_INSTALAR_OFFICE_LIGERO.bat",
     "size_mb": 0.0,
