@@ -1,5 +1,14 @@
 [
   {
+    "name": "Office_Canaima_MiniOS10",
+    "filename": "Office_Canaima_MiniOS10.zip",
+    "size_mb": 2.91,
+    "date": "2026-11-18 08:15",
+    "description": "Instalador Automatico de Office Ligero y Completo (32 bits) para Canaimas con MiniOS 10",
+    "download_url": "files/Office_Canaima_MiniOS10.zip",
+    "raw_url": "https://github.com/luiscrock16/archivos/raw/main/files/Office_Canaima_MiniOS10.zip"
+  },
+  {
     "name": "pagina",
     "filename": "pagina.zip",
     "size_mb": 0.1,
