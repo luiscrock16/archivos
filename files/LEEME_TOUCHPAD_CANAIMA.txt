@@ -1,0 +1,66 @@
+================================================================================
+GUIA COMPLETA: ACTIVACION Y CONTROLADORES DE TOUCHPAD PARA CANAIMA
+Arquitectura: 32 bits (x86) | Sistema Operativo: MiniOS 10 / Windows 10
+Ubicacion: C:\Users\User\Documents\trabajos\Drivers_Touchpad_Canaima_x86
+================================================================================
+
+CONTENIDO DE ESTA CARPETA:
+--------------------------------------------------------------------------------
+1. INSTALAR_TOUCHPAD.bat
+   - Script automatizado de 1 clic.
+   - Pide permisos de administrador automaticamente.
+   - Corrige el servicio PS/2 (i8042prt) en el registro de Windows (vital en MiniOS).
+   - Inyecta e instala todos los controladores Synaptics y ELAN.
+   - Fuerza el escaneo de nuevo hardware.
+
+2. 1_Synaptics_Touchpad_Win10_x86\
+   - Controlador oficial Synaptics Pointing Device para Windows 10 (32 bits / x86).
+   - Version: 19.0.17.2 WHQL (Certificado por Microsoft).
+   - Soporta dispositivos Synaptics PS/2, SMBus y estandar (*PNP0F13, *SYN0700, etc.).
+
+3. 2_ELAN_Touchpad_x86\
+   - Controlador oficial ELAN Microelectronics Touchpad para 32 bits (x86).
+   - Soporta dispositivos ELAN SmartPad y PS/2 (*ETD0001, etc.).
+
+--------------------------------------------------------------------------------
+PASO A PASO PARA ACTIVAR EL TOUCHPAD:
+--------------------------------------------------------------------------------
+
+METODO 1 (RECOMENDADO - 1 CLIC):
+1. Conecta temporalmente un raton (mouse) USB a la Canaima.
+2. Abre la carpeta: Drivers_Touchpad_Canaima_x86
+3. Haz clic derecho sobre "INSTALAR_TOUCHPAD.bat" y selecciona "Ejecutar como administrador".
+4. Sigue las instrucciones en pantalla.
+5. Al finalizar, si te pregunta si deseas reiniciar, escribe "S" y pulsa Enter.
+   (El reinicio es indispensable para que Windows cargue el servicio del bus PS/2).
+
+--------------------------------------------------------------------------------
+DIAGNOSTICO: POR QUE SUELE FALLAR EL TOUCHPAD EN LAS CANAIMAS CON MINIOS?
+--------------------------------------------------------------------------------
+
+Caso 1: BLOQUEO POR COMBINACION DE TECLAS O BOTON TACTIL
+Muchas Canaimas (Letras Azules, Letras Rojas, Docente) tienen funcion de bloqueo fisico:
+- Presiona la combinacion:  Fn + F1   o   Fn + F6   o   Fn + F7
+- En los modelos con un LED pequeno en la esquina superior izquierda del panel tactil:
+  Si ese LED esta encendido (en color naranja o ambar), el panel esta BLOQUEADO.
+  Solucion: Da DOS TOQUES RAPIDOS (doble tap) con la yema del dedo sobre la esquina donde
+  esta el LED para apagarlo y desbloquear el touchpad.
+
+Caso 2: SERVICIO PS/2 DESACTIVADO EN SISTEMAS MINIOS
+Las ediciones MiniOS y versiones "Lite" suelen deshabilitar servicios legacy de puertos PS/2
+para ahorrar milisegundos de arranque. Al apagarse este servicio, el sistema ignora totalmente
+el panel tactil. El script "INSTALAR_TOUCHPAD.bat" reactiva este servicio en el registro.
+
+Caso 3: ASIGNACION MANUAL DESDE EL ADMINISTRADOR DE DISPOSITIVOS
+Si tras reiniciar el touchpad sigue sin responder:
+1. Pulsa las teclas [Windows] + [R], escribe "devmgmt.msc" y presiona Enter.
+2. Despliega la seccion "Ratones y otros dispositivos señaladores".
+3. Si aparece con un triangulo amarillo o como dispositivo desconocido:
+   a) Haz clic derecho sobre el dispositivo y selecciona "Actualizar controlador".
+   b) Selecciona "Examinar mi PC en busca de controladores".
+   c) Selecciona "Elegir en una lista de controladores disponibles en el equipo".
+   d) Haz clic en el boton "Usar disco...".
+   e) Clic en "Examinar..." y busca la carpeta:
+      C:\Users\User\Documents\trabajos\Drivers_Touchpad_Canaima_x86\1_Synaptics_Touchpad_Win10_x86\SynPD.inf
+   f) Selecciona "Synaptics Pointing Device" o "Mouse compatible con PS/2", haz clic en Siguiente y reinicia.
+================================================================================
