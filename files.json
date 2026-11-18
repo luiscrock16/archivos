@@ -1,5 +1,14 @@
 [
   {
+    "name": "WPS_Office_Instalador.exe",
+    "filename": "WPS_Office_Instalador.exe",
+    "size_mb": 5.32,
+    "date": "2026-11-18 10:30",
+    "description": "Instalador oficial de WPS Office para Windows (Word, Excel, PowerPoint, PDF)",
+    "download_url": "files/WPS_Office_Instalador.exe",
+    "raw_url": "https://github.com/luiscrock16/archivos/raw/main/files/WPS_Office_Instalador.exe"
+  },
+  {
     "name": "Actualizacion_Instaladores_Office_Canaima",
     "filename": "Actualizacion_Instaladores_Office_Canaima.zip",
     "size_mb": 2.91,
