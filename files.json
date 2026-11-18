@@ -1,5 +1,14 @@
 [
   {
+    "name": "WPS_Office",
+    "filename": "WPS_Office.zip",
+    "size_mb": 2.85,
+    "date": "2026-11-18 10:30",
+    "description": "Pack WPS Office para Windows con instalador y guia para abrir enlaces",
+    "download_url": "files/WPS_Office.zip",
+    "raw_url": "https://github.com/luiscrock16/archivos/raw/main/files/WPS_Office.zip"
+  },
+  {
     "name": "WPS_Office_Instalador.exe",
     "filename": "WPS_Office_Instalador.exe",
     "size_mb": 5.32,
