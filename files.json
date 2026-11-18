@@ -1,5 +1,14 @@
 [
   {
+    "name": "Instalar_Office_Canaima.exe",
+    "filename": "Instalar_Office_Canaima.exe",
+    "size_mb": 0.01,
+    "date": "2026-11-18 10:06",
+    "description": "Instalador visual en .EXE para Canaima (No usa CMD, no se cierra)",
+    "download_url": "files/Instalar_Office_Canaima.exe",
+    "raw_url": "https://github.com/luiscrock16/archivos/raw/main/files/Instalar_Office_Canaima.exe"
+  },
+  {
     "name": "config_canaima_ligero.xml",
     "filename": "config_canaima_ligero.xml",
     "size_mb": 0.0,
