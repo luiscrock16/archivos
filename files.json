@@ -1,5 +1,14 @@
 [
   {
+    "name": "1_INSTALAR_OFFICE_LIGERO.bat",
+    "filename": "1_INSTALAR_OFFICE_LIGERO.bat",
+    "size_mb": 0.0,
+    "date": "2026-11-18 10:06",
+    "description": "1_INSTALAR_OFFICE_LIGERO.bat corregido sin errores de sintaxis cmd",
+    "download_url": "files/1_INSTALAR_OFFICE_LIGERO.bat",
+    "raw_url": "https://github.com/luiscrock16/archivos/raw/main/files/1_INSTALAR_OFFICE_LIGERO.bat"
+  },
+  {
     "name": "Instalar_Office_Canaima.exe",
     "filename": "Instalar_Office_Canaima.exe",
     "size_mb": 0.01,
@@ -16,15 +25,6 @@
     "description": "Configuracion XML de Office Ligero corregida para Canaima",
     "download_url": "files/config_canaima_ligero.xml",
     "raw_url": "https://github.com/luiscrock16/archivos/raw/main/files/config_canaima_ligero.xml"
-  },
-  {
-    "name": "1_INSTALAR_OFFICE_LIGERO.bat",
-    "filename": "1_INSTALAR_OFFICE_LIGERO.bat",
-    "size_mb": 0.0,
-    "date": "2026-11-18 09:46",
-    "description": "Script corregido 1_INSTALAR_OFFICE_LIGERO.bat para Canaimas con MiniOS 10",
-    "download_url": "files/1_INSTALAR_OFFICE_LIGERO.bat",
-    "raw_url": "https://github.com/luiscrock16/archivos/raw/main/files/1_INSTALAR_OFFICE_LIGERO.bat"
   },
   {
     "name": "Actualizacion_Instaladores_Office_Canaima",
