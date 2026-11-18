@@ -1,5 +1,14 @@
 [
   {
+    "name": "pagina",
+    "filename": "pagina.zip",
+    "size_mb": 0.1,
+    "date": "2026-11-18 07:00",
+    "description": "Sistema Escolar Local - Colegio Divina Providencia",
+    "download_url": "files/pagina.zip",
+    "raw_url": "https://github.com/luiscrock16/archivos/raw/main/files/pagina.zip"
+  },
+  {
     "name": "Drivers_Touchpad_Canaima_x86.zip",
     "filename": "Drivers_Touchpad_Canaima_x86.zip",
     "size_mb": 87.4,
