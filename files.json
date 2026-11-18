@@ -1,5 +1,14 @@
 [
   {
+    "name": "Actualizacion_Instaladores_Office_Canaima",
+    "filename": "Actualizacion_Instaladores_Office_Canaima.zip",
+    "size_mb": 2.91,
+    "date": "2026-11-18 09:46",
+    "description": "Actualizacion de instaladores y scripts de Office para Canaima (MiniOS 10) - Solucion error ventana que se cierra",
+    "download_url": "files/Actualizacion_Instaladores_Office_Canaima.zip",
+    "raw_url": "https://github.com/luiscrock16/archivos/raw/main/files/Actualizacion_Instaladores_Office_Canaima.zip"
+  },
+  {
     "name": "Office_Canaima_MiniOS10",
     "filename": "Office_Canaima_MiniOS10.zip",
     "size_mb": 2.91,
