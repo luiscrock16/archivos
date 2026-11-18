@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal de Descargas | Antigravity</title>
+  <style>
+    :root {
+      --bg-primary: #0f172a;
+      --bg-secondary: #1e293b;
+      --bg-card: rgba(30, 41, 59, 0.7);
+      --border-color: rgba(255, 255, 255, 0.1);
+      --accent: #38bdf8;
+      --accent-hover: #0284c7;
+      --accent-glow: rgba(56, 189, 248, 0.25);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --badge-bg: rgba(56, 189, 248, 0.15);
+      --badge-text: #38bdf8;
+      --success: #10b981;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.12) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(99, 102, 241, 0.1) 0px, transparent 50%);
+      color: var(--text-main);
+      min-height: 100vh;
+      padding: 1.5rem 1rem;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* HEADER */
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+      padding: 1.5rem 1rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 1rem;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+    }
+
+    .logo-container {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 56px;
+      height: 56px;
+      background: var(--accent-glow);
+      border: 1px solid var(--accent);
+      border-radius: 50%;
+      margin-bottom: 1rem;
+    }
+
+    .logo-container svg {
+      width: 30px;
+      height: 30px;
+      fill: var(--accent);
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, #f8fafc 0%, #38bdf8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p.subtitle {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* STATS BAR */
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 0.75rem;
+      padding: 1rem;
+      text-align: center;
+      backdrop-filter: blur(8px);
+    }
+
+    .stat-val {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.25rem;
+    }
+
+    /* SEARCH & FILTER */
+    .controls {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .search-wrapper {
+      position: relative;
+      width: 100%;
+    }
+
+    .search-wrapper input {
+      width: 100%;
+      padding: 0.85rem 1rem 0.85rem 2.8rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 0.75rem;
+      color: var(--text-main);
+      font-size: 0.95rem;
+      outline: none;
+      transition: all 0.2s;
+    }
+
+    .search-wrapper input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-glow);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+
+    /* FILE LIST */
+    .file-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .file-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 0.85rem;
+      padding: 1.15rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      backdrop-filter: blur(10px);
+      transition: transform 0.15s, border-color 0.15s, box-shadow 0.15s;
+    }
+
+    .file-card:hover {
+      border-color: rgba(56, 189, 248, 0.4);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.4);
+    }
+
+    .file-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.9rem;
+    }
+
+    .file-icon {
+      font-size: 1.8rem;
+      min-width: 42px;
+      height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 0.5rem;
+    }
+
+    .file-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .file-name {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-main);
+      word-break: break-all;
+      margin-bottom: 0.3rem;
+    }
+
+    .file-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .file-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.2rem 0.6rem;
+      font-size: 0.75rem;
+      border-radius: 9999px;
+      background: var(--badge-bg);
+      color: var(--badge-text);
+      font-weight: 500;
+    }
+
+    .badge.size {
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--success);
+    }
+
+    /* ACTIONS */
+    .file-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-top: 0.25rem;
+    }
+
+    .btn-download {
+      flex: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.25rem;
+      background: var(--accent);
+      color: #0f172a;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.92rem;
+      border-radius: 0.6rem;
+      transition: background-color 0.2s, transform 0.1s;
+    }
+
+    .btn-download:hover {
+      background: var(--accent-hover);
+      color: #ffffff;
+      transform: translateY(-1px);
+    }
+
+    .btn-copy {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--border-color);
+      border-radius: 0.6rem;
+      color: var(--text-main);
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-copy:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    /* EMPTY STATE */
+    .empty-state {
+      text-align: center;
+      padding: 3.5rem 1.5rem;
+      background: var(--bg-card);
+      border: 1px dashed var(--border-color);
+      border-radius: 1rem;
+      color: var(--text-muted);
+    }
+
+    .empty-state svg {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 1rem;
+      opacity: 0.5;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding: 1.5rem;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      border-top: 1px solid var(--border-color);
+    }
+
+    @media (min-width: 640px) {
+      .file-card {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .file-actions {
+        margin-top: 0;
+        flex: 0 0 auto;
+        min-width: 170px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <div class="logo-container">
+        <svg viewBox="0 0 24 24">
+          <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/>
+        </svg>
+      </div>
+      <h1>Archivos y Descargas Antigravity</h1>
+      <p class="subtitle">Repositorio de builds, documentos y archivos exportados remotamente</p>
+    </header>
+
+    <div class="stats-bar">
+      <div class="stat-card">
+        <div class="stat-val" id="totalFiles">0</div>
+        <div class="stat-label">Archivos</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val" id="totalSize">0 MB</div>
+        <div class="stat-label">Tamaño Total</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val" id="lastUpdated">-</div>
+        <div class="stat-label">Último Subido</div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="search-wrapper">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" placeholder="Buscar por nombre o descripción...">
+      </div>
+    </div>
+
+    <div id="fileList" class="file-list">
+      <!-- Se llenará dinámicamente con JavaScript -->
+    </div>
+
+    <footer>
+      Conectado con Antigravity & Telegram Bot • Actualizado automáticamente
+    </footer>
+  </div>
+
+  <script>
+    let allFiles = [];
+
+    function getFileIcon(filename) {
+      const ext = filename.split('.').pop().toLowerCase();
+      switch (ext) {
+        case 'zip':
+        case 'rar':
+        case '7z':
+        case 'tar':
+        case 'gz':
+          return '📦';
+        case 'pdf':
+          return '📕';
+        case 'docx':
+        case 'doc':
+          return '📘';
+        case 'pptx':
+        case 'ppt':
+          return '📊';
+        case 'xlsx':
+        case 'xls':
+          return '📗';
+        case 'png':
+        case 'jpg':
+        case 'jpeg':
+        case 'gif':
+        case 'webp':
+          return '🖼️';
+        case 'mp4':
+        case 'avi':
+        case 'mov':
+        case 'mkv':
+          return '🎬';
+        case 'exe':
+        case 'apk':
+          return '⚙️';
+        case 'gd':
+        case 'py':
+        case 'json':
+        case 'txt':
+          return '📄';
+        default:
+          return '📁';
+      }
+    }
+
+    async function loadFiles() {
+      try {
+        const response = await fetch('files.json?t=' + Date.now());
+        if (!response.ok) throw new Error('No se pudo cargar files.json');
+        allFiles = await response.json();
+      } catch (err) {
+        console.warn('Cargando catálogo alternativo:', err);
+        allFiles = [];
+      }
+      render();
+    }
+
+    function render(filter = '') {
+      const listEl = document.getElementById('fileList');
+      const search = filter.toLowerCase().trim();
+
+      const filtered = allFiles.filter(f => 
+        (f.name && f.name.toLowerCase().includes(search)) ||
+        (f.filename && f.filename.toLowerCase().includes(search)) ||
+        (f.description && f.description.toLowerCase().includes(search))
+      );
+
+      // Actualizar estadísticas
+      document.getElementById('totalFiles').textContent = allFiles.length;
+      const sumMB = allFiles.reduce((acc, cur) => acc + (parseFloat(cur.size_mb) || 0), 0);
+      document.getElementById('totalSize').textContent = sumMB >= 1024 
+        ? (sumMB / 1024).toFixed(1) + ' GB'
+        : sumMB.toFixed(1) + ' MB';
+
+      if (allFiles.length > 0) {
+        document.getElementById('lastUpdated').textContent = allFiles[0].date || '-';
+      }
+
+      if (filtered.length === 0) {
+        listEl.innerHTML = `
+          <div class="empty-state">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/>
+            </svg>
+            <h3>${allFiles.length === 0 ? 'No hay archivos subidos aún' : 'No se encontraron coincidencias'}</h3>
+            <p style="margin-top:0.4rem;font-size:0.88rem;">${allFiles.length === 0 ? 'Usa /subir en Telegram o dile a Antigravity que suba un archivo.' : 'Intenta con otro término de búsqueda.'}</p>
+          </div>
+        `;
+        return;
+      }
+
+      listEl.innerHTML = filtered.map(file => {
+        const icon = getFileIcon(file.filename || file.name);
+        const downloadUrl = file.download_url || ('files/' + encodeURIComponent(file.filename || file.name));
+        const sizeBadge = file.size_mb ? `<span class="badge size">💾 ${file.size_mb} MB</span>` : '';
+        const dateBadge = file.date ? `<span class="badge">📅 ${file.date}</span>` : '';
+
+        return `
+          <div class="file-card">
+            <div class="file-header">
+              <div class="file-icon">${icon}</div>
+              <div class="file-info">
+                <div class="file-name">${file.name || file.filename}</div>
+                ${file.description ? `<div class="file-desc">${file.description}</div>` : ''}
+                <div class="file-badges">
+                  ${sizeBadge}
+                  ${dateBadge}
+                </div>
+              </div>
+            </div>
+            <div class="file-actions">
+              <a href="${downloadUrl}" class="btn-download" download>
+                ⬇️ Descargar
+              </a>
+              <button class="btn-copy" title="Copiar enlace directo" onclick="copyLink('${downloadUrl}')">
+                🔗
+              </button>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function copyLink(relUrl) {
+      const fullUrl = new URL(relUrl, window.location.href).href;
+      navigator.clipboard.writeText(fullUrl).then(() => {
+        alert('Enlace copiado al portapapeles: ' + fullUrl);
+      }).catch(() => {
+        prompt('Copia este enlace:', fullUrl);
+      });
+    }
+
+    document.getElementById('searchInput').addEventListener('input', (e) => {
+      render(e.target.value);
+    });
+
+    loadFiles();
+  </script>
+</body>
+</html>
