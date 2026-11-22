@@ -1,5 +1,14 @@
 [
   {
+    "name": "version_limpia",
+    "filename": "version_limpia.zip",
+    "size_mb": 1.67,
+    "date": "2026-11-22 11:45",
+    "description": "Version limpia completa lista para produccion",
+    "download_url": "files/version_limpia.zip",
+    "raw_url": "https://github.com/luiscrock16/archivos/raw/main/files/version_limpia.zip"
+  },
+  {
     "name": "version_documentada",
     "filename": "version_documentada.zip",
     "size_mb": 1.69,
