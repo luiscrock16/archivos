@@ -1,5 +1,14 @@
 [
   {
+    "name": "UmaParty-PC-Windows.zip",
+    "filename": "UmaParty-PC-Windows.zip",
+    "size_mb": 74.08,
+    "date": "2026-11-25 19:47",
+    "description": "Build Windows PC con duelo completo (duelistas, espectadores, bots y retorno al tablero)",
+    "download_url": "files/UmaParty-PC-Windows.zip",
+    "raw_url": "https://github.com/luiscrock16/archivos/raw/main/files/UmaParty-PC-Windows.zip"
+  },
+  {
     "name": "UmaParty-Web-Itch.zip",
     "filename": "UmaParty-Web-Itch.zip",
     "size_mb": 29.57,
@@ -7,15 +16,6 @@
     "description": "Build Web Itch con duelo completo (duelistas, espectadores, bots y retorno al tablero)",
     "download_url": "files/UmaParty-Web-Itch.zip",
     "raw_url": "https://github.com/luiscrock16/archivos/raw/main/files/UmaParty-Web-Itch.zip"
-  },
-  {
-    "name": "UmaParty-PC-Windows.zip",
-    "filename": "UmaParty-PC-Windows.zip",
-    "size_mb": 74.08,
-    "date": "2026-11-25 19:34",
-    "description": "Build Windows PC con correccion de carga del tablero y podio limpio",
-    "download_url": "files/UmaParty-PC-Windows.zip",
-    "raw_url": "https://github.com/luiscrock16/archivos/raw/main/files/UmaParty-PC-Windows.zip"
   },
   {
     "name": "UmaParty.apk",
