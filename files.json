@@ -1,5 +1,14 @@
 [
   {
+    "name": "UmaParty-Web-Itch.zip",
+    "filename": "UmaParty-Web-Itch.zip",
+    "size_mb": 29.59,
+    "date": "2026-11-26 13:34",
+    "description": "Build Web (Itch.io) con cafeteria y duelo corregidos",
+    "download_url": "files/UmaParty-Web-Itch.zip",
+    "raw_url": "https://github.com/luiscrock16/archivos/raw/main/files/UmaParty-Web-Itch.zip"
+  },
+  {
     "name": "UmaParty.apk",
     "filename": "UmaParty.apk",
     "size_mb": 74.0,
@@ -7,15 +16,6 @@
     "description": "Build Android APK con cafeteria y duelo corregidos",
     "download_url": "files/UmaParty.apk",
     "raw_url": "https://github.com/luiscrock16/archivos/raw/main/files/UmaParty.apk"
-  },
-  {
-    "name": "UmaParty-Web-Itch.zip",
-    "filename": "UmaParty-Web-Itch.zip",
-    "size_mb": 29.58,
-    "date": "2026-11-25 20:34",
-    "description": "Build Web (Itch.io) con sistema anti-repeticion de minijuegos",
-    "download_url": "files/UmaParty-Web-Itch.zip",
-    "raw_url": "https://github.com/luiscrock16/archivos/raw/main/files/UmaParty-Web-Itch.zip"
   },
   {
     "name": "UmaParty-PC-Windows.zip",
