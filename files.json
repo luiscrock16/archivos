@@ -1,5 +1,14 @@
 [
   {
+    "name": "UmaParty.apk",
+    "filename": "UmaParty.apk",
+    "size_mb": 74.0,
+    "date": "2026-11-26 12:22",
+    "description": "Build Android APK con corredor central, teletransporte, robo de objetos, ruleta de eventos y bonificaciones finales",
+    "download_url": "files/UmaParty.apk",
+    "raw_url": "https://github.com/luiscrock16/archivos/raw/main/files/UmaParty.apk"
+  },
+  {
     "name": "UmaParty-Web-Itch.zip",
     "filename": "UmaParty-Web-Itch.zip",
     "size_mb": 29.58,
@@ -16,15 +25,6 @@
     "description": "Build Windows PC con animaciones de dados, sin simular/salir y duelo reparado",
     "download_url": "files/UmaParty-PC-Windows.zip",
     "raw_url": "https://github.com/luiscrock16/archivos/raw/main/files/UmaParty-PC-Windows.zip"
-  },
-  {
-    "name": "UmaParty.apk",
-    "filename": "UmaParty.apk",
-    "size_mb": 64.66,
-    "date": "2026-11-24 11:35",
-    "description": "Caos en la Cafeteria: pedidos especificos, cubo de basura, velocidad progresiva y fix de empuje",
-    "download_url": "files/UmaParty.apk",
-    "raw_url": "https://github.com/luiscrock16/archivos/raw/main/files/UmaParty.apk"
   },
   {
     "name": "version_limpia",
