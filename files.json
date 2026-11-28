@@ -2,9 +2,9 @@
   {
     "name": "Agnes_Tachyon.vrm",
     "filename": "Agnes_Tachyon.vrm.zip",
-    "size_mb": 1.97,
-    "date": "2026-11-27 21:34",
-    "description": "Modelo Agnes Tachyon VRM optimizado para Warudo con esqueleto normalizado T-pose y morphs faciales corregidos",
+    "size_mb": 1.95,
+    "date": "2026-11-27 21:52",
+    "description": "Modelo Agnes Tachyon VRM con orientación frontal -Z y ejes de brazos corregidos según estándar Unity/Helios",
     "download_url": "files/Agnes_Tachyon.vrm.zip",
     "raw_url": "https://github.com/luiscrock16/archivos/raw/main/files/Agnes_Tachyon.vrm.zip"
   },
