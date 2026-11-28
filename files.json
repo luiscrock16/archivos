@@ -1,5 +1,14 @@
 [
   {
+    "name": "Agnes_Tachyon.vrm",
+    "filename": "Agnes_Tachyon.vrm.zip",
+    "size_mb": 1.99,
+    "date": "2026-11-27 20:11",
+    "description": "Agnes Tachyon VRM optimizado para Warudo: esqueleto humanoide completo (53 huesos), shaders MToon toony cálidos, reflejos en los ojos horneados (UmaViewer) y 64 blendshapes faciales (VRM y ARKit)",
+    "download_url": "files/Agnes_Tachyon.vrm.zip",
+    "raw_url": "https://github.com/luiscrock16/archivos/raw/main/files/Agnes_Tachyon.vrm.zip"
+  },
+  {
     "name": "Daitaku_Helios.vrm",
     "filename": "Daitaku_Helios.vrm.zip",
     "size_mb": 1.86,
